@@ -5,11 +5,12 @@ FROM python:3.11.2-slim-buster
 RUN mkdir -p /app
 WORKDIR /app
 
+# Install the Python dependencies
+COPY requirements.txt /app
+RUN pip install --no-cache-dir -r requirements.txt
+
 # Copy the content of the current directory to the container
 COPY . /app
-
-# Install the Python dependencies
-RUN pip install --no-cache-dir -r requirements.txt && pip cache purge
 
 # Expose the Flask port
 EXPOSE 5000
