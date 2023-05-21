@@ -1,2 +1,3 @@
-Flask==1.1.2
+Flask>=1.1.2
 edge-tts
+aiohttp>=3.8.0
